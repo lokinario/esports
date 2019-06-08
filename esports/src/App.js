@@ -1,22 +1,37 @@
 import React, {
   Component
 } from 'react';
+// import * as d3 from 'd3';
+// import _ from 'lodash';
+
 import Preloader from './components/Preloader.js';
+// import PlayerAges from './components/playerAges.js';
+// import {
+//   loadAllData
+// } from './DataHanding';
 class App extends Component {
   state = {
-    data: []
+    data: [],
+    country: [],
+    prizePools: [],
+    dates: [],
+    views: [],
   }
+  // componentWillMount() {
+  //   loadAllData(data => this.setState(data))
+  // }
   render() {
     if (this.state.data.length < 1) {
-      return ( <
-        Preloader / >
-      );
+      return ( < Preloader / > );
     }
     return ( <
       div className = "App" >
-
       <
-      /div>
+      h1 > Loaded {
+        this.state.data.length
+      }
+      values < /h1> < /
+      div >
     )
   }
 }
