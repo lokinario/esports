@@ -4,6 +4,7 @@ import React, { Component } from "react";
 
 // import Preloader from './components/Preloader.js';
 import PlayerAges from "./components/playerAges";
+import Viewership from "./components/Viewership";
 // import {
 //   loadAllData
 // } from './DataHanding';
@@ -23,6 +24,7 @@ class App extends Component {
       return (
         <div className="App container">
           <PlayerAges />
+          <Viewership />
         </div>
       );
     }
