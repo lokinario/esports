@@ -1,93 +1,48 @@
-var React = require('react');
-var Component = React.Component;
-var CanvasJSReact = require('../assets/canvasjs.react');
-// var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import React from "react";
+import { Bar } from "react-chartjs-2";
 
-class PlayerAges extends Component {
-    componentWillMount() {
+class PlayerAges extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      chartData: {
+        type: "horizontalBar",
+        labels: ["<20", "20-22", "23-24", "25-28", ">28"],
+        datasets: [
+          {
+            label: ["Age Distribution of League of Legened Pro Players"],
+            data: [23, 22, 23, 33, 13],
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.6)",
+              "rgba(255, 206, 86, 0.6)",
+              "rgba(75, 192, 192, 0.6)",
+              "rgba(153, 102, 255, 0.6)",
+              "rgba(255, 159, 64, 0.6)",
+              "rgba(255, 99, 132, 0.6)"
+            ]
+          }
+        ]
+      }
+    };
+  }
 
-    }
-    render() {
-        const options = {
-            animationEnabled: true,
-            exportEnabled: true,
-            theme: "light2", //"light1", "dark1", "dark2"
-            title: {
-                text: "Age Distribution of Esports Player"
+  render() {
+    console.log("in playerAges");
+
+    return (
+      <div className="App containter">
+        <Bar
+          data={this.state.chartData}
+          options={{
+            legend: {
+              display: true
             },
-            data: [{
-                type: "column",
-                indexLabelFontColor: "#5A5757",
-                indexLabelPlacement: "outside",
-                dataPoints: [{
-                        x: 10,
-                        y: 71
-                    },
-                    {
-                        x: 20,
-                        y: 55
-                    },
-                    {
-                        x: 30,
-                        y: 50
-                    },
-                    {
-                        x: 40,
-                        y: 65
-                    },
-                    {
-                        x: 50,
-                        y: 71
-                    },
-                    {
-                        x: 60,
-                        y: 68
-                    },
-                    {
-                        x: 70,
-                        y: 38
-                    },
-                    {
-                        x: 80,
-                        y: 92,
-                        indexLabel: "Highest"
-                    },
-                    {
-                        x: 90,
-                        y: 54
-                    },
-                    {
-                        x: 100,
-                        y: 60
-                    },
-                    {
-                        x: 110,
-                        y: 21
-                    },
-                    {
-                        x: 120,
-                        y: 49
-                    },
-                    {
-                        x: 130,
-                        y: 36
-                    }
-                ]
-            }]
-        }
-
-        return ( < div >
-            <
-            CanvasJSChart options = {
-                options
-            }
-            />
-
-            <
-            /div>
-        );
-    }
+            maintainAspectRatio: false
+          }}
+        />{" "}
+      </div>
+    );
+  }
 }
 
-module.exports = PlayerAges;
+export default PlayerAges;
