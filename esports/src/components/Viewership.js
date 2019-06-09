@@ -8,86 +8,73 @@ class Viewership extends React.Component {
     this.state = {
       chartData: {
         datasets: [
-          {
-            label: "LOL",
-            data: [
-              {
-                x: 0,
-                y: 3
-              },
-              {
-                x: 1,
-                y: 3
-              },
-              {
-                x: 2,
-                y: 3
-              }
-            ],
-            borderColor: ["#FC345C"],
-            pointHoverBackgroundColor: "white",
-            backgroundColor: ["#FC345C"],
-            fill: false,
-            borderWidth: 1.0
-          },
-          {
-            label: "CSGO",
-            data: [
-              {
-                x: 0,
-                y: 2
-              },
-              {
-                x: 1,
-                y: 2
-              },
-              {
-                x: 2,
-                y: 2
-              }
-            ],
-            borderColor: ["#8EA5EB"],
-            backgroundColor: ["#8EA5EB"],
-            fill: false,
-            borderWidth: 1.0
-          },
-          {
-            label: "OW",
-            data: [
-              {
-                x: 0,
-                y: 1
-              },
-              {
-                x: 1,
-                y: 1
-              },
-              {
-                x: 2,
-                y: 1
-              }
-            ],
-            borderColor: ["#A3DE83"],
-            backgroundColor: ["#A3DE83"],
-            fill: false,
-            borderWidth: 1.0
-          },
+          // {
+          //   label: "LOL",
+          //   data: [
+          //     {
+          //       x: 0,
+          //       y: 1
+          //     },
+          //     {
+          //       x: 1,
+          //       y: 2
+          //     },
+          //     {
+          //       x: 2,
+          //       y: 3
+          //     }
+          //   ],
+          //   borderColor: ["#FC345C"],
+          //   pointHoverBackgroundColor: "white",
+          //   backgroundColor: ["#FC345C"],
+          //   fill: false,
+          //   borderWidth: 1.0
+          // },
+          // {
+          //   label: "CSGO",
+          //   data: [
+          //     {
+          //       x: 0,
+          //       y: 2
+          //     },
+          //     {
+          //       x: 1,
+          //       y: 1
+          //     },
+          //     {
+          //       x: 2,
+          //       y: 5
+          //     }
+          //   ],
+          //   borderColor: ["#8EA5EB"],
+          //   backgroundColor: ["#8EA5EB"],
+          //   fill: false,
+          //   borderWidth: 1.0
+          // },
+          // {
+          //   label: "OW",
+          //   data: [
+          //     {
+          //       x: 0,
+          //       y: 1
+          //     },
+          //     {
+          //       x: 1,
+          //       y: 12
+          //     },
+          //     {
+          //       x: 2,
+          //       y: 3
+          //     }
+          //   ],
+          //   borderColor: ["#A3DE83"],
+          //   backgroundColor: ["#A3DE83"],
+          //   fill: false,
+          //   borderWidth: 1.0
+          // },
           {
             label: "Fortnite",
-            data: [
-              {
-                x: 0,
-                y: 4
-              },
-              {
-                x: 1,
-                y: 4
-              },
-              {
-                x: 2,
-                y: 4
-              }
-            ],
+            data:[] ,
             borderColor: ["#FFDD00"],
             backgroundColor: ["#FFDD00"],
             fill: false,
@@ -137,7 +124,8 @@ class Viewership extends React.Component {
         <div className="app container">
           <Line
             data={this.state.chartData}
-            height={200}
+            width={200}
+            height={100}
             options={{
               legend: {
                 display: true
