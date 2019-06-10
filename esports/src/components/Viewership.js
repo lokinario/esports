@@ -74,11 +74,19 @@ class Viewership extends React.Component {
           // },
           {
             label: "Fortnite",
-            data:[] ,
+            data:[],
             borderColor: ["#FFDD00"],
             backgroundColor: ["#FFDD00"],
             fill: false,
             borderWidth: 1.0
+          },
+          {
+            label: "LoL",
+            data:[],
+            borderColor:["#FC345C"],
+            backgroundColor:["#FC345C"],
+            fill: false,
+            borderWidth:1.0
           }
         ]
       }
