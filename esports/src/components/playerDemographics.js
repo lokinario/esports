@@ -18,7 +18,7 @@ class PlayerDemographics extends React.Component {
         datasets: [
           {
             label: "League of Legends",
-            data: [19, 40, 0, 27, 184, 14],
+            data: [36, 81, 0, 95, 435, 40],
             backgroundColor: [
               "rgba(45, 64, 89, 0.6)",
               "rgba(45, 64, 89, 0.6)",
@@ -89,7 +89,12 @@ class PlayerDemographics extends React.Component {
     console.log("in playerDemo");
     return (
       <div className="App containter">
-        <h1> Player Contenient Distriubtion by Game </h1>{" "}
+        <h1> Player Demographic Distriubtion by Game </h1>{" "}
+        <p>
+          Europe and South America have more prominent professional players in
+          more realistic games like CS: GO and Rainbow 6, whereas Asia dominates
+          more in cartoon aesthetic games like League and Overwatch.{" "}
+        </p>{" "}
         <HorizontalBar
           data={this.state.chartData}
           options={{
