@@ -168,8 +168,8 @@ class Prize extends React.Component {
                  },
                  ticks: {
                     beginAtZero: true,
-                    min: -1500,
-                    max: 8500,
+                    min: -2000,
+                    max: 10000,
                     callback: function(value, index, values) {
                       if(parseInt(value) >= 1000) {
                         return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
