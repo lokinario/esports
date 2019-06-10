@@ -119,77 +119,107 @@ class Prize extends React.Component {
   render() {
     return (
       <div className="App containter">
-      <Bubble
-        data={{
-          datasets: this.state.datasets
-        }}
-        options={{
-          legend: {
-            display: true
-          },
-          pan: {
-            enabled: true, // Enable panning
-            mode: "x", // Allow panning in the x direction
-            rangeMin: {
-              x: null // Min value of the delay option
+        <h1>Prize Pool Game Distribution of 2018</h1>
+        <Bubble
+          data={{
+            datasets: this.state.datasets
+          }}
+          options={{
+            legend: {
+              display: true
             },
-            rangeMax: {
-              x: null // Max value of the delay option
-            }
-          },
-          zoom: {
-            enabled: true, // Enable zooming
-            mode: "x", // Allow zooming in the x direction
-            rangeMin: {
-              x: null // Min value of the duration option
+            pan: {
+              enabled: true, // Enable panning
+              mode: "x", // Allow panning in the x direction
+              rangeMin: {
+                x: null // Min value of the delay option
+              },
+              rangeMax: {
+                x: null // Max value of the delay option
+              }
             },
-            rangeMax: {
-              x: null // Max value of the duration option
-            }
-          },
-          responsive: true,
-          maintainAspectRatio: true,
-          plugins: {
-            streaming: {
-              frameRate: 120
-            }
-          },
-          scales: {
-            yAxes:[{
-                    stacked:true,
-                gridLines: {
-                    display:true,
-                },
-                ticks: {
-                   suggestedMax: 100,
-                   suggestedMin: -10000
+            zoom: {
+              enabled: true, // Enable zooming
+              mode: "x", // Allow zooming in the x direction
+              rangeMin: {
+                x: null // Min value of the duration option
+              },
+              rangeMax: {
+                x: null // Max value of the duration option
+              }
+            },
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              streaming: {
+                frameRate: 120
+              }
+            },
+            scales: {
+              xAxes: [{
+                  gridLines: {
+                      display:true
+                  },
+                  scaleLabel: {
+                      display: true,
+                      labelString: 'Total Prize Pool Money',
+                      fontStyle: 'bold',
+                      fontSize: 20
+                  },
+                 ticks: {
+                   callback: function(value, index, values) {
+                     if(parseInt(value) >= 1000){
+                       return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                     } else {
+                       return '$' + value;
+                     }
+                   }
+                 }
+             }],
+             yAxes: [{
+                 scaleLabel: {
+                     display: true,
+                     labelString: '# of Tournaments',
+                     fontStyle: 'bold',
+                     fontSize: 20
+                 },
+                 stacked:true,
+                 gridLines: {
+                     display:true,
+                 },
+                 ticks: {
+                    suggestedMax: 100,
+                    suggestedMin: -10000,
+                    callback: function(value, index, values) {
+                      if(parseInt(value) >= 1000) {
+                        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                      } else {
+                        return value;
+                      }
+                    }
                 }
             }],
-            xAxes:[{
-                    gridLines: {
-                    display:false
+            },
+            tooltips: {
+              callbacks: {
+                // this callback is used to create the tooltip label
+                label: function(tooltipItem, data) {
+                  // get the data label and data value to display
+                  // convert the data value to local string so it uses a comma seperated number
+                  var dataLabel = data.datasets[tooltipItem.datasetIndex].label;
+                  // add the currency symbol $ to the label
+                  var data = JSON.stringify(data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]);
+                  // var revenue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].r * 2;
+                  // revenue = Math.trunc(revenue);
+                  // var value = ': ' + commaFormat(revenue);
+                  dataLabel += ': ' + data;
+                  // return the text to display on the tooltip
+                  return dataLabel;
                 }
-            }]
-          },
-          tooltips: {
-            callbacks: {
-              // this callback is used to create the tooltip label
-              label: function(tooltipItem, data) {
-                // get the data label and data value to display
-                // convert the data value to local string so it uses a comma seperated number
-                var dataLabel = data.datasets[tooltipItem.datasetIndex].label;
-                // add the currency symbol $ to the label
-                var revenue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].y;
-                revenue = Math.trunc(revenue);
-                var value = ': ' + commaFormat(revenue);
-                dataLabel += value;
-                // return the text to display on the tooltip
-                return dataLabel;
               }
             }
-          }
-        }}
-      />
+          }}
+        />
       </div>
     );
   }
