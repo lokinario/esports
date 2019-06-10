@@ -32,7 +32,6 @@ class App extends Component {
     console.log(fortnite);
     if (this.state.data.length < 1) {
       return (
-<<<<<<< Updated upstream
         <div className="container">
           <div className="chart">
             <PlayerAges />
@@ -49,15 +48,6 @@ class App extends Component {
           <div className="chart">
             <Prize />
           </div>{" "}
-=======
-        <div className="App container">
-          <PlayerAges />
-          <PlayerDemographics />
-          <Viewership />
-          <CountryEarnings />
-          <WinningPlayers />
-          <Prize />
->>>>>>> Stashed changes
         </div>
       );
     }
