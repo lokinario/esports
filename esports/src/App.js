@@ -8,7 +8,7 @@ import Viewership from "./components/Viewership";
 import WinningPlayers from "./components/WinningPlayers";
 import CountryEarnings from "./components/CountryEarnings";
 import fortnite from "./assets/Twitch/Fortnite.txt";
-import SunburstDistribution from "./components/Sunburst";
+//import SunburstDistribution from "./components/Sunburst";
 import Histogram from "./components/Histogram";
 // import {
 //   loadAllData
@@ -33,8 +33,6 @@ class App extends Component {
           <Viewership />
           <CountryEarnings />
           <WinningPlayers />
-          <SunburstDistribution />
-          <Histogram />
         </div>
       );
     }

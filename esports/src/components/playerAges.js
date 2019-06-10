@@ -43,7 +43,8 @@ class PlayerAges extends React.Component {
         ]
       }
     };
-
+  }
+  
   // constructor(props) {
   //   super(props);
   //
