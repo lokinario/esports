@@ -119,7 +119,7 @@ class Prize extends React.Component {
   render() {
     return (
       <div className="App containter">
-        <h1>Prize Pool Game Distribution of 2018</h1>
+        <h1>2018 Game Prize Pool Distribution</h1>
         <Bubble
           data={{
             datasets: this.state.datasets

@@ -48,7 +48,7 @@ class WinningPlayers extends React.Component {
 
     return (
       <div className="containter">
-        <h1> Percentage of Winning Players by Country </h1>{" "}
+        <h1>Player Winnings by Country (1998 - 2018)</h1>
         <Doughnut
           data={{
             labels: this.state.labels,

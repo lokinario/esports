@@ -105,7 +105,8 @@ class PlayerAges extends React.Component {
   render() {
     console.log("in playerAges");
     return (
-      <div className="App containter">
+      <div className="containter">
+        <h1>Age Demographics by Game</h1>
         <Bar
           data={this.state.chartData}
           options={{
