@@ -2078,7 +2078,7 @@ class Prize extends React.Component {
         </p>{" "}
         <Bubble
           data={{
-            datasets: this.state.dataset2005
+            datasets: this.state.dataset2018
           }}
           options={{
             legend: {

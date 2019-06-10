@@ -912,6 +912,11 @@ class Viewership extends React.Component {
             legend: {
               display: true
             },
+            elements: {
+                point:{
+                    radius: 0
+                }
+            },
             pan: {
               enabled: true, // Enable panning
               mode: "x", // Allow panning in the x direction
