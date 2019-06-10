@@ -2,6 +2,7 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 
 class PlayerAges extends React.Component {
+
   constructor() {
     super();
     this.state = {
@@ -42,7 +43,19 @@ class PlayerAges extends React.Component {
         ]
       }
     };
-  }
+
+  // constructor(props) {
+  //   super(props);
+  //
+  //   this.updateD3(props);
+  // }
+  //
+  // componentWillReceiveProps(newProps) {
+  //   this.updateD3(newProps);
+  //
+  // }
+
+  // updateD3(props) {}
 
   render() {
     return (

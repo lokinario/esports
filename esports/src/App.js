@@ -6,8 +6,10 @@ import React, { Component } from "react";
 import PlayerAges from "./components/playerAges";
 import Viewership from "./components/Viewership";
 import WinningPlayers from "./components/WinningPlayers";
-import CountryEarnings from "./components/CountryEarnings"
+import CountryEarnings from "./components/CountryEarnings";
 import fortnite from "./assets/Twitch/Fortnite.txt";
+import SunburstDistribution from "./components/Sunburst";
+import Histogram from "./components/Histogram";
 // import {
 //   loadAllData
 // } from './DataHanding';
@@ -17,13 +19,13 @@ class App extends Component {
     country: [],
     prizePools: [],
     dates: [],
-    views: [],
+    views: []
   };
   // componentWillMount() {
   //   loadAllData(data => this.setState(data))
   // }
   render() {
-    console.log(fortnite)
+    console.log(fortnite);
     if (this.state.data.length < 1) {
       return (
         <div className="App container">
@@ -31,6 +33,8 @@ class App extends Component {
           <Viewership />
           <CountryEarnings />
           <WinningPlayers />
+          <SunburstDistribution />
+          <Histogram />
         </div>
       );
     }
