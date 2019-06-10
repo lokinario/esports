@@ -6,7 +6,8 @@ import React, { Component } from "react";
 import PlayerAges from "./components/playerAges";
 import Viewership from "./components/Viewership";
 import WinningPlayers from "./components/WinningPlayers";
-import CountryEarnings from "./components/CountryEarnings"
+import CountryEarnings from "./components/CountryEarnings";
+import Prize from "./components/Prize";
 import fortnite from "./assets/Twitch/Fortnite.txt";
 // import {
 //   loadAllData
@@ -31,6 +32,7 @@ class App extends Component {
           <Viewership />
           <CountryEarnings />
           <WinningPlayers />
+          <Prize />
         </div>
       );
     }
