@@ -26,13 +26,21 @@ class WinningPlayers extends React.Component {
           datasets:this.state.datasets
         }}
         options={{
-          pieceLabel: {
-            render: 'percentage',
-            fontColor: 'black',
-            fontSize: 14,
-            fontStyle: 'bold',
-            precision: 2
-          },
+          pieceLabel: [
+            {
+              render: 'label',
+              position: 'outside',
+              fontColor: 'black',
+              fontSize: 14,
+            },
+            {
+              render: 'percentage',
+              fontColor: 'black',
+              fontSize: 14,
+              fontStyle: 'bold',
+              precision: 2
+            }
+          ],
           tooltips:{
             callbacks: {
               // this callback is used to create the tooltip label
