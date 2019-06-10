@@ -2,49 +2,91 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 
 class PlayerAges extends React.Component {
-
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      leagueData: {
+      chartData: {
         type: "horizontalBar",
         labels: ["<20", "20-22", "23-24", "25-28", ">28"],
         datasets: [
           {
-            label: ["Age Distribution of 1534 Notable LoL Players"],
-            data: [372, 664, 351, 90, 57],
+            label: "League of Legends",
+            data: [383, 674, 275, 172, 58],
             backgroundColor: [
               "rgba(54, 162, 235, 0.6)",
-              "rgba(255, 206, 86, 0.6)",
-              "rgba(75, 192, 192, 0.6)",
-              "rgba(153, 102, 255, 0.6)",
-              "rgba(255, 159, 64, 0.6)",
-              "rgba(255, 99, 132, 0.6)"
+              "rgba(54, 162, 235, 0.6)",
+              "rgba(54, 162, 235, 0.6)",
+              "rgba(54, 162, 235, 0.6)",
+              "rgba(54, 162, 235, 0.6)",
+              "rgba(54, 162, 235, 0.6)"
             ]
-          }
-        ]
-      },
-      csgoData: {
-        type: "horizontalBar",
-        labels: ["<20", "20-22", "23-24", "25-28", ">28"],
-        datasets: [
+          },
           {
-            label: ["Age Distribution of 459 Notable CS:GO Players"],
-            data: [49, 136, 133, 79, 62],
+            label: "CS:GO",
+            data: [48, 135, 93, 120, 63],
             backgroundColor: [
-              "rgba(54, 162, 235, 0.6)",
               "rgba(255, 206, 86, 0.6)",
+              "rgba(255, 206, 86, 0.6)",
+              "rgba(255, 206, 86, 0.6)",
+              "rgba(255, 206, 86, 0.6)",
+              "rgba(255, 206, 86, 0.6)",
+              "rgba(255, 206, 86, 0.6)"
+              // "rgba(75, 192, 192, 0.6)",
+              // "rgba(153, 102, 255, 0.6)",
+              // "rgba(255, 159, 64, 0.6)",
+              // "rgba(255, 99, 132, 0.6)"
+            ]
+          },
+          {
+            label: "DOTA 2",
+            data: [48, 135, 93, 120, 63],
+            backgroundColor: [
               "rgba(75, 192, 192, 0.6)",
-              "rgba(153, 102, 255, 0.6)",
-              "rgba(255, 159, 64, 0.6)",
+              "rgba(75, 192, 192, 0.6)",
+              "rgba(75, 192, 192, 0.6)",
+              "rgba(75, 192, 192, 0.6)",
+              "rgba(75, 192, 192, 0.6)",
+              "rgba(75, 192, 192, 0.6)"
+              // "rgba(75, 192, 192, 0.6)",
+              // "rgba(153, 102, 255, 0.6)",
+              // "rgba(255, 159, 64, 0.6)",
+              // "rgba(255, 99, 132, 0.6)"
+            ]
+          },
+          {
+            label: "Overwatch",
+            data: [157, 71, 30, 11, 2],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.6)",
+              "rgba(255, 99, 132, 0.6)",
+              "rgba(255, 99, 132, 0.6)",
+              "rgba(255, 99, 132, 0.6)",
+              "rgba(255, 99, 132, 0.6)",
               "rgba(255, 99, 132, 0.6)"
+              // "rgba(153, 102, 255, 0.6)",
+              // "rgba(255, 159, 64, 0.6)",
+              // "rgba(255, 99, 132, 0.6)"
+            ]
+          },
+          {
+            label: "Rainbow 6 Siege",
+            data: [157, 71, 30, 11, 2],
+            backgroundColor: [
+              "rgba(153, 102, 255, 0.6)",
+              "rgba(153, 102, 255, 0.6)",
+              "rgba(153, 102, 255, 0.6)",
+              "rgba(153, 102, 255, 0.6)",
+              "rgba(153, 102, 255, 0.6)",
+              "rgba(153, 102, 255, 0.6)"
+              // "rgba(255, 159, 64, 0.6)",
+              // "rgba(255, 99, 132, 0.6)"
             ]
           }
         ]
       }
     };
   }
-  
+
   // constructor(props) {
   //   super(props);
   //
@@ -56,29 +98,35 @@ class PlayerAges extends React.Component {
   //
   // }
 
-  // updateD3(props) {}
+  componentDidMount() {
+    console.log("playerage mounted");
+  }
 
   render() {
+    console.log("in playerAges");
     return (
-      <div className="containter">
+      <div className="App containter">
         <Bar
-          data={this.state.leagueData}
+          data={this.state.chartData}
           options={{
             legend: {
               display: true
             },
-            maintainAspectRatio: true
-          }}
-        />
-        <Bar
-          data={this.state.csgoData}
-          options={{
-            legend: {
-              display: true
+            scales: {
+              xAxes: [
+                {
+                  stacked: true
+                }
+              ],
+              yAxes: [
+                {
+                  stacked: true
+                }
+              ]
             },
             maintainAspectRatio: true
           }}
-        />
+        />{" "}
       </div>
     );
   }

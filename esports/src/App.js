@@ -9,11 +9,12 @@ import WinningPlayers from "./components/WinningPlayers";
 import CountryEarnings from "./components/CountryEarnings";
 import Prize from "./components/Prize";
 import fortnite from "./assets/Twitch/Fortnite.txt";
-//import SunburstDistribution from "./components/Sunburst";
-import Histogram from "./components/Histogram";
+// import SunburstDistribution from "./components/Sunburst";
+// import Histogram from "./components/Histogram";
 // import {
 //   loadAllData
 // } from './DataHanding';
+
 class App extends Component {
   state = {
     data: [],
@@ -30,8 +31,7 @@ class App extends Component {
     if (this.state.data.length < 1) {
       return (
         <div className="App container">
-          <PlayerAges />
-          <Viewership />
+          <PlayerAges /> <Viewership />
           <CountryEarnings />
           <WinningPlayers />
           <Prize />
