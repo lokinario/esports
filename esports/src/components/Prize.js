@@ -2197,24 +2197,11 @@ class Prize extends React.Component {
 }
 
 export default Prize;
-//function set commas
-function commaFormat(num){
-  let strNum = num.toString()
-  let strSplit = strNum.split('.')
-  let result =''
-  let digitSplit = strSplit[0].split('')
-  let decSplit = (strSplit[1]) ? ('.'+strSplit[1]) : ('')
-  let digitSplitMod = digitSplit.length % 3 -1
 
-  if(digitSplit.length > 3){
-    for(let i=0;i<digitSplit.length-3;i++){
-      //console.log(digitSplit[i])
-      if(i%3 === digitSplitMod){
-        //console.log('comma')
-        digitSplit[i] = digitSplit[i]+','
-      }
-    }
+function commaFormat(value) {
+  if(parseInt(value) >= 1000){
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  } else {
+    return value;
   }
-  result = digitSplit.join('')+decSplit
-  return result
 }
