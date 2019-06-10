@@ -6,9 +6,8 @@ class Prize extends React.Component {
   constructor() {
     super();
     this.state = {
-        rs:null,
       datasets:[
-        {
+       {
          label: ["Fortnite"],
          backgroundColor: "rgba(252, 52, 92, 0.6)",
          borderColor: "rgba(252, 52, 92, 0.6)",
@@ -16,7 +15,7 @@ class Prize extends React.Component {
            {x:20055832.14	,r:174/5,y:1442}
         ]
         },
-         {
+       {
           label: ["Dota 2"],
           backgroundColor: "rgba(142, 165, 235, 0.6)",
           borderColor: "rgba(142, 165, 235, 0.6)",
@@ -120,6 +119,12 @@ class Prize extends React.Component {
     return (
       <div className="App containter">
         <h1>2018 Game Prize Pool Distribution</h1>
+        <p>
+          It is visible that Dota 2 has the most overall prize pool in 2018, but at the same time it has
+          an average amount of tournaments and a very small amount of recorded competitive players.It is also
+          seen that CS:GO has the biggest recorded number of competitive players in 2018 as well as the most tournaments held,
+          but it's total overall prize pool for 2018 is far less than Dota 2. Why would this be?{" "}
+        </p>{" "}
         <Bubble
           data={{
             datasets: this.state.datasets

@@ -131,6 +131,13 @@ class CountryEarnings extends React.Component {
     return (
       <div className="container">
         <h1>eSports Tournament Earnings by Country</h1>
+        <p>
+          There was a steady rate of recorded tournament earnings between the years of 1998 to 2011.
+          After this point, the amount of eSports Tournament earnings per year began growing at sporatic
+          rate with huge spikes of growth such as 2013-2014 for China or 2017-2018 for the United States.
+          This could be because of a new release of a game or an increase in sponsorship and advertisment
+          for a tournament or game.
+        </p>{" "}
         <Line
           data={this.state.chartData}
           width={300}
