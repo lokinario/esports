@@ -878,16 +878,14 @@ class Viewership extends React.Component {
     super();
     console.log("line constructed");
     this.state = {
-      data: dataYear[2019],
-      value: 2019,
+      year: 2019,
     };
   }
 
   yearChange = (event) => {
     console.log(event.target.value);
     this.setState({
-      data: dataYear[event.target.value],
-      value: event.target.value,
+      year: event.target.value,
     });
   }
 
@@ -900,14 +898,14 @@ class Viewership extends React.Component {
           which only spike in viewership during major tournaments. Fortnite viewership grew drastically in 2018 and currently
           remains one of the most viewed games on twitch.
         </p>{" "}
-        <select value={this.state.value} onChange={this.yearChange}>
+        <select value={this.state.year} onChange={this.yearChange}>
           <option value="2016">2016</option>
           <option value="2017">2017</option>
           <option value="2018">2018</option>
           <option value="2019">2019</option>
         </select>
         <Line
-          data={this.state.data}
+          data={dataYear[this.state.year]}
           width={200}
           height={100}
           options={{
