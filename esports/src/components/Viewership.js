@@ -930,6 +930,23 @@ class Viewership extends React.Component {
             },
             responsive: true,
             maintainAspectRatio: true,
+            tooltips: {
+              callbacks: {
+                // this callback is used to create the tooltip label
+                label: function(tooltipItem, data) {
+                  // get the data label and data value to display
+                  // convert the data value to local string so it uses a comma seperated number
+                  var dataLabel = data.datasets[tooltipItem.datasetIndex].label;
+                  // add the currency symbol $ to the label
+                  var revenue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].y;
+                  revenue = Math.trunc(revenue);
+                  var value = ': ' + commaFormat(revenue);
+                  dataLabel += value + ' viewers';
+                  // return the text to display on the tooltip
+                  return dataLabel;
+                }
+              }
+            },
             scales: {
                 yAxes: [{
                     scaleLabel: {
@@ -971,3 +988,12 @@ class Viewership extends React.Component {
 }
 
 export default Viewership;
+
+
+function commaFormat(value) {
+  if(parseInt(value) >= 1000){
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  } else {
+    return value;
+  }
+}
