@@ -125,110 +125,105 @@ class CountryEarnings extends React.Component {
         ]
       }
     };
-    //console.log(this.state);
   }
 
-  //   componentDidMount() {
-  //     console.log("line did mount");
-  //     this.setState(this.updateData());
-  //     //console.log(this.state);
-  //   }
-
-  //   }
-
-  // // componentWillUpdate() {
-  // //   this.keepUpdate();
-  // // }
-
-  // updateData() {
-  //   return {
-  //     chartData: {
-  //       datasets: [
-  //         {
-  //           label: "CPU percentage",
-  //           data: [{ x: Date.now(), y: Math.random() }],
-  //           borderColor: ["#00B8B1"],
-  //           fill: false,
-  //           borderWidth: 1.69
-  //         }
-  //       ]
-  //     }
-  //   };
-  // }
-  //setInterval(this.keepUpdate(),1000);
-
   render() {
-    if (true) {
-      console.log("in Country");
-    }
-    if (this.state) {
-      return (
-        <div className="app container">
-          <Line
-            data={this.state.chartData}
-            width={300}
-            height={150}
-            options={{
-              legend: {
-                display: true
+    return (
+      <div className="container">
+        <h1>eSports Tournament Earnings by Country</h1>
+        <Line
+          data={this.state.chartData}
+          width={300}
+          height={150}
+          options={{
+            legend: {
+              display: true
+            },
+            pan: {
+              enabled: true, // Enable panning
+              mode: "x", // Allow panning in the x direction
+              rangeMin: {
+                x: null // Min value of the delay option
               },
-              pan: {
-                enabled: true, // Enable panning
-                mode: "x", // Allow panning in the x direction
-                rangeMin: {
-                  x: null // Min value of the delay option
-                },
-                rangeMax: {
-                  x: null // Max value of the delay option
-                }
+              rangeMax: {
+                x: null // Max value of the delay option
+              }
+            },
+            zoom: {
+              enabled: true, // Enable zooming
+              mode: "x", // Allow zooming in the x direction
+              rangeMin: {
+                x: null // Min value of the duration option
               },
-              zoom: {
-                enabled: true, // Enable zooming
-                mode: "x", // Allow zooming in the x direction
-                rangeMin: {
-                  x: null // Min value of the duration option
-                },
-                rangeMax: {
-                  x: null // Max value of the duration option
-                }
-              },
-              responsive: true,
-              maintainAspectRatio: true,
-              plugins: {
-                streaming: {
-                  frameRate: 120
+              rangeMax: {
+                x: null // Max value of the duration option
+              }
+            },
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              streaming: {
+                frameRate: 120
+              }
+            },
+            scales: {
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Total Earnings',
+                        fontStyle: 'bold',
+                        fontSize: 20
+                    },
+                   ticks: {
+                     beginAtZero: true,
+                     callback: function(value, index, values) {
+                       if(parseInt(value) >= 1000){
+                         return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                       } else {
+                         return '$' + value;
+                       }
+                     }
+                   }
+               }],
+               xAxes: [{
+                   scaleLabel: {
+                       display: true,
+                       labelString: 'Year',
+                       fontStyle: 'bold',
+                       fontSize: 20
+                   }
+               }],
+            },
+            tooltips: {
+              callbacks: {
+                // this callback is used to create the tooltip label
+                label: function(tooltipItem, data) {
+                  // get the data label and data value to display
+                  // convert the data value to local string so it uses a comma seperated number
+                  var dataLabel = data.datasets[tooltipItem.datasetIndex].label;
+                  // add the currency symbol $ to the label
+                  var revenue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].y;
+                  revenue = Math.trunc(revenue);
+                  var value = ': ' + commaFormat(revenue);
+                  dataLabel += value;
+                  // return the text to display on the tooltip
+                  return dataLabel;
                 }
               }
-            //   scales: {
-            //     xAxes: [
-            //       {
-            //         gridLines: {
-            //           zeroLineColor: "white"
-            //         },
-            //         ticks: {
-            //           fontColor: "white"
-            //         }
-            //       }
-            //     ],
-            //     yAxes: [
-            //       {
-            //         gridLines: {
-            //           zeroLineColor: "white"
-            //         },
-            //         ticks: {
-            //           fontColor: "white"
-            //         }
-            //       }
-            //     ]
-            //   }
-            }}
-          />{" "}
-        </div>
-      );
-    } else {
-      return <div className="app container"> no data </div>;
-    }
+            }
+          }}
+        />
+      </div>
+    );
   }
 }
 
 export default CountryEarnings;
+
+function commaFormat(value) {
+  if(parseInt(value) >= 1000){
+    return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  } else {
+    return '$' + value;
+  }
+}

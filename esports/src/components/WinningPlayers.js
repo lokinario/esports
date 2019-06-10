@@ -16,8 +16,8 @@ class WinningPlayers extends React.Component {
     console.log("in WinnningPlayers");
 
     return (
-      <div className="App containter">
-      <h1>Percentage of Players Winning from a Country</h1>
+      <div className="containter">
+      <h1>Percentage of Winning Players by Country</h1>
       <Pie
         data={{
           labels:this.state.labels,
@@ -28,7 +28,7 @@ class WinningPlayers extends React.Component {
             callbacks:{
               label: function(tooltipItem,data) {
                 let value = data.datasets[0].data[tooltipItem.index]
-                return commaFormat(value)
+                return commaFormat(value);
               },
               title: function(tooltipItem,data){
                 return data.labels[tooltipItem[0].index];

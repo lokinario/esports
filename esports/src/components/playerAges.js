@@ -45,8 +45,6 @@ class PlayerAges extends React.Component {
   }
 
   render() {
-    console.log("in playerAges");
-
     return (
       <div className="containter">
         <Bar
