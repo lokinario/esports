@@ -102,7 +102,7 @@ class PlayerDemographics extends React.Component {
     console.log("in playerDemo");
     return (
       <div className="App containter">
-        <h1> Player Continent Distriubtion by Game </h1>{" "}
+        <h1> Player Contenient Distriubtion by Game </h1>{" "}
         <HorizontalBar
           data={this.state.chartData}
           options={{

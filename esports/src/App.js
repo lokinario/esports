@@ -37,6 +37,9 @@ class App extends Component {
             <PlayerAges />
           </div>{" "}
           <div className="chart">
+            <PlayerDemographics />
+          </div>{" "}
+          <div className="chart">
             <Viewership />
           </div>{" "}
           <div className="chart">
