@@ -95,6 +95,10 @@ class PlayerDemographics extends React.Component {
           more realistic games like CS: GO and Rainbow 6, whereas Asia dominates
           more in cartoon aesthetic games like League, DOTA 2 and Overwatch.{" "}
         </p>{" "}
+        <p>
+          Similarly, Asian players are better at MOBA games whereas Europe has a
+          strong control of FPS games.{" "}
+        </p>{" "}
         <HorizontalBar
           data={this.state.chartData}
           options={{

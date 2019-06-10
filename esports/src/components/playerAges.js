@@ -108,14 +108,13 @@ class PlayerAges extends React.Component {
       <div className="containter">
         <h1> Age Demographics by Game </h1>{" "}
         <p>
-          It 's clear to see that the age of the average players is directly
-          correlated with the age of the game.{" "}
+          The age of the average players is directly correlated with the age of
+          the game series.{" "}
         </p>{" "}
         <ul>
           <li> League of Legends - (2009) </li>{" "}
-          <li> Counter Strike - Global Offensive - (2012) </li>{" "}
-          <li> DOTA 2 - (2013) </li> <li> Overwatch - (2016) </li>{" "}
-          <li> Rainbow Six Siege - (2015) </li>{" "}
+          <li> Counter Strike Series - (1999) </li> <li> DOTA - (2002) </li>{" "}
+          <li> Overwatch - (2016) </li> <li> Rainbow Six Siege - (2015) </li>{" "}
         </ul>{" "}
         <Bar
           data={this.state.chartData}
