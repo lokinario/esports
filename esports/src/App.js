@@ -4,6 +4,7 @@ import React, { Component } from "react";
 
 // import Preloader from './components/Preloader.js';
 import PlayerAges from "./components/playerAges";
+import PlayerDemographics from "./components/playerDemographics";
 import Viewership from "./components/Viewership";
 import WinningPlayers from "./components/WinningPlayers";
 import CountryEarnings from "./components/CountryEarnings";
@@ -31,7 +32,9 @@ class App extends Component {
     if (this.state.data.length < 1) {
       return (
         <div className="App container">
-          <PlayerAges /> <Viewership />
+          <PlayerAges />
+          <PlayerDemographics />
+          <Viewership />
           <CountryEarnings />
           <WinningPlayers />
           <Prize />
