@@ -112,10 +112,10 @@ class PlayerAges extends React.Component {
           correlated with the age of the game.{" "}
         </p>{" "}
         <ul>
-          <li> League of Legends(2009) </li>{" "}
-          <li> Counter Strike: Global Offensive(2012) </li>{" "}
-          <li> DOTA 2(2013) </li> <li> Overwatch(2016) </li>{" "}
-          <li> Rainbow Six Siege(2015) </li>{" "}
+          <li> League of Legends - (2009) </li>{" "}
+          <li> Counter Strike - Global Offensive - (2012) </li>{" "}
+          <li> DOTA 2 - (2013) </li> <li> Overwatch - (2016) </li>{" "}
+          <li> Rainbow Six Siege - (2015) </li>{" "}
         </ul>{" "}
         <Bar
           data={this.state.chartData}

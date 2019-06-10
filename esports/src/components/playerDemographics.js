@@ -93,7 +93,7 @@ class PlayerDemographics extends React.Component {
         <p>
           Europe and South America have more prominent professional players in
           more realistic games like CS: GO and Rainbow 6, whereas Asia dominates
-          more in cartoon aesthetic games like League and Overwatch.{" "}
+          more in cartoon aesthetic games like League, DOTA 2 and Overwatch.{" "}
         </p>{" "}
         <HorizontalBar
           data={this.state.chartData}
