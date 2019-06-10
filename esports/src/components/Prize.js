@@ -128,26 +128,6 @@ class Prize extends React.Component {
             legend: {
               display: true
             },
-            pan: {
-              enabled: true, // Enable panning
-              mode: "x", // Allow panning in the x direction
-              rangeMin: {
-                x: null // Min value of the delay option
-              },
-              rangeMax: {
-                x: null // Max value of the delay option
-              }
-            },
-            zoom: {
-              enabled: true, // Enable zooming
-              mode: "x", // Allow zooming in the x direction
-              rangeMin: {
-                x: null // Min value of the duration option
-              },
-              rangeMax: {
-                x: null // Max value of the duration option
-              }
-            },
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
