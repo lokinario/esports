@@ -879,29 +879,27 @@ class Viewership extends React.Component {
     console.log("line constructed");
     this.state = {
       data: dataYear[2019],
+      value: 2019,
     };
   }
 
-  setYear = (year) => {
-    this.setState({ data: dataYear[year] });
+  yearChange = (event) => {
+    this.setState({
+      data: dataYear[event.target.value],
+      value: event.target.value,
+    });
   }
 
   render() {
     return (
       <div className="container">
         <h1>Twitch Viewership Data (2016 - 2019)</h1>
-        <button onClick={() => this.setYear(2016)}>
-          <span aria-hidden="true">2016</span>
-        </button>
-        <button onClick={() => this.setYear(2017)}>
-          <span aria-hidden="true">2017</span>
-        </button>
-        <button onClick={() => this.setYear(2018)}>
-          <span aria-hidden="true">2018</span>
-        </button>
-        <button onClick={() => this.setYear(2019)}>
-          <span aria-hidden="true">2019</span>
-        </button>
+        <select value={this.state.value} onChange={this.yearChange}>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+        </select>
         <Line
           data={this.state.data}
           width={200}
