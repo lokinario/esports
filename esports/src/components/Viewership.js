@@ -152,11 +152,6 @@ class Viewership extends React.Component {
               },
               responsive: true,
               maintainAspectRatio: true,
-              plugins: {
-                streaming: {
-                  frameRate: 120
-                }
-              },
               scales: {
                 xAxes: [
                   {
