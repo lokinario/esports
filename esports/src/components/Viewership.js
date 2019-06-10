@@ -773,68 +773,76 @@ class Viewership extends React.Component {
     if (true) {
       console.log("in Viewership");
     }
-    if (this.state) {
-      return (
-        <div className="app container">
-          <Line
-            data={this.state.chartData}
-            width={200}
-            height={100}
-            options={{
-              legend: {
-                display: true
+    return (
+      <div className="container">
+        <h1>Twitch Viewership Data (2016 - 2019)</h1>
+        <Line
+          data={this.state.chartData}
+          width={200}
+          height={100}
+          options={{
+            legend: {
+              display: true
+            },
+            pan: {
+              enabled: true, // Enable panning
+              mode: "x", // Allow panning in the x direction
+              rangeMin: {
+                x: null // Min value of the delay option
               },
-              pan: {
-                enabled: true, // Enable panning
-                mode: "x", // Allow panning in the x direction
-                rangeMin: {
-                  x: null // Min value of the delay option
-                },
-                rangeMax: {
-                  x: null // Max value of the delay option
-                }
-              },
-              zoom: {
-                enabled: true, // Enable zooming
-                mode: "x", // Allow zooming in the x direction
-                rangeMin: {
-                  x: null // Min value of the duration option
-                },
-                rangeMax: {
-                  x: null // Max value of the duration option
-                }
-              },
-              responsive: true,
-              maintainAspectRatio: true,
-              scales: {
-                xAxes: [
-                  {
-                    gridLines: {
-                      zeroLineColor: "white"
-                    },
-                    ticks: {
-                      fontColor: "white"
-                    }
-                  }
-                ],
-                yAxes: [
-                  {
-                    gridLines: {
-                      zeroLineColor: "white"
-                    },
-                    ticks: {
-                      fontColor: "white"
-                    }
-                  }
-                ]
+              rangeMax: {
+                x: null // Max value of the delay option
               }
-            }}
-          />{" "}
-        </div>
-      );
-    } else {
-      return <div className="app container"> no data </div>;
-    }
+            },
+            zoom: {
+              enabled: true, // Enable zooming
+              mode: "x", // Allow zooming in the x direction
+              rangeMin: {
+                x: null // Min value of the duration option
+              },
+              rangeMax: {
+                x: null // Max value of the duration option
+              }
+            },
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: '# of Viewers at 5:00 PM',
+                        fontStyle: 'bold',
+                        fontSize: 20
+                    },
+                   ticks: {
+                     beginAtZero: true,
+                     callback: function(value, index, values) {
+                       if(parseInt(value) >= 1000){
+                         return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                       } else {
+                         return value;
+                       }
+                     }
+                   }
+               }],
+               xAxes: [{
+                   scaleLabel: {
+                       display: true,
+                       labelString: 'Date',
+                       fontStyle: 'bold',
+                       fontSize: 20
+                   },
+                   ticks: {
+                     callback: function(value, index, values) {
+                       return value.replace("17:00:00.000", "");
+                     }
+                   }
+               }],
+            },
+          }}
+        />{" "}
+      </div>
+    );
   }
 }
 

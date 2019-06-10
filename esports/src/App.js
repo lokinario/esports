@@ -8,6 +8,7 @@ import Viewership from "./components/Viewership";
 import WinningPlayers from "./components/WinningPlayers";
 import CountryEarnings from "./components/CountryEarnings";
 import Prize from "./components/Prize";
+import './App.css';
 import fortnite from "./assets/Twitch/Fortnite.txt";
 // import SunburstDistribution from "./components/Sunburst";
 // import Histogram from "./components/Histogram";
@@ -30,16 +31,27 @@ class App extends Component {
     console.log(fortnite);
     if (this.state.data.length < 1) {
       return (
-        <div className="App container">
-          <PlayerAges /> <Viewership />
-          <CountryEarnings />
-          <WinningPlayers />
-          <Prize />
+        <div className="container">
+          <div className="chart">
+            <PlayerAges />
+          </div>
+          <div className="chart">
+            <Viewership />
+          </div>
+          <div className="chart">
+            <CountryEarnings />
+          </div>
+          <div className="chart">
+            <WinningPlayers />
+          </div>
+          <div className="chart">
+            <Prize />
+          </div>
         </div>
       );
     }
     return (
-      <div className="App">
+      <div className="container">
         <h1>
           {" "}
           Loaded {this.state.data.length}
