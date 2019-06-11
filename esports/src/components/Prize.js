@@ -2079,7 +2079,7 @@ class Prize extends React.Component {
   render() {
     return (
       <div className="App containter">
-        <h1>Game Prize Pool Distribution</h1>
+        <h1>Game Prize Pool Distribution (1998 - 2018)</h1>
         <p>
           The size of the bubbles represent the amount of professional players in the competitive scene relative to the other games.
           It is visible that Dota 2 currently has the most overall prize pool, but at the same time it has an average amount of
