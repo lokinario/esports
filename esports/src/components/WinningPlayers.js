@@ -48,12 +48,14 @@ class WinningPlayers extends React.Component {
 
     return (
       <div className="containter">
-        <h1>Player Winnings by Country (1998 - 2018)</h1>
+        <h1> Player Winnings by Country(1998 - 2018) </h1>{" "}
         <p>
-          The United States and Korea contain over 33% of the of the player winnings over a 20 year long period.
-          Every other country has about the same number of winnings, except for the "smaller countries combined" which is
-          made up of over 50 countries, however the United States makes up 21.33%. This is almost 5 times as much as many
-          of the other countries.
+          The United States and Korea contain over 33 % of the of the player
+          winnings over a 20 year long period.Every other country has about the
+          same number of winnings, except for the "smaller countries combined"
+          which is made up of over 50 countries, however the United States makes
+          up 21.33 % .This is almost 5 times as much as many of the other
+          countries.{" "}
         </p>{" "}
         <Doughnut
           data={{
