@@ -48,7 +48,7 @@ class WinningPlayers extends React.Component {
 
     return (
       <div className="containter">
-        <h1> Player Winnings by Country(1998 - 2018) </h1>{" "}
+        <h1> Player Winnings by Country (1998 - 2018) </h1>{" "}
         <p>
           The United States and Korea contain over 33 % of the of the player
           winnings over a 20 year long period.Every other country has about the
