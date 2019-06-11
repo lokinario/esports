@@ -7,7 +7,6 @@ import WinningPlayers from "./components/WinningPlayers";
 import CountryEarnings from "./components/CountryEarnings";
 import Prize from "./components/Prize";
 import "./App.css";
-import fortnite from "./assets/Twitch/Fortnite.txt";
 
 class App extends Component {
   state = {
@@ -19,7 +18,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(fortnite);
     if (this.state.data.length < 1) {
       return (
         <div className="container">
