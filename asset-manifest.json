@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/esports/static/css/main.438ca491.chunk.css",
+    "main.js": "/esports/static/js/main.62fb48de.chunk.js",
+    "main.js.map": "/esports/static/js/main.62fb48de.chunk.js.map",
+    "runtime~main.js": "/esports/static/js/runtime~main.29cba204.js",
+    "runtime~main.js.map": "/esports/static/js/runtime~main.29cba204.js.map",
+    "static/css/2.fba91e8f.chunk.css": "/esports/static/css/2.fba91e8f.chunk.css",
+    "static/js/2.646b4051.chunk.js": "/esports/static/js/2.646b4051.chunk.js",
+    "static/js/2.646b4051.chunk.js.map": "/esports/static/js/2.646b4051.chunk.js.map",
+    "index.html": "/esports/index.html",
+    "precache-manifest.321a18714d5e1b78c14fa1bfcca04c78.js": "/esports/precache-manifest.321a18714d5e1b78c14fa1bfcca04c78.js",
+    "service-worker.js": "/esports/service-worker.js",
+    "static/css/2.fba91e8f.chunk.css.map": "/esports/static/css/2.fba91e8f.chunk.css.map",
+    "static/css/main.438ca491.chunk.css.map": "/esports/static/css/main.438ca491.chunk.css.map",
+    "static/media/bootstrap.css": "/esports/static/media/glyphicons-halflings-regular.fa277232.woff"
+  }
+}
